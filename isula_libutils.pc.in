@@ -1,0 +1,12 @@
+prefix=@CMAKE_INSTALL_PREFIX@
+libdir=@CMAKE_INSTALL_PREFIX@/lib
+localstatedir=@CMAKE_INSTALL_PREFIX@/var
+includedir=@CMAKE_INSTALL_PREFIX@/include
+
+Name: libisula_libutils
+Description: c library of tools for isula
+Version: @ISULA_LIBUTILS_VERSION@
+URL: isula_libutils
+Libs: -L@CMAKE_INSTALL_PREFIX@/lib -lisula_libutils
+Cflags: -I@CMAKE_INSTALL_PREFIX@/include
+
