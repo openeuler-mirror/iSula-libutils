@@ -1,5 +1,5 @@
 %global _version 1.0.0
-%global _release 20200508.122403.git49093ba7
+%global _release 20200519.220857.git3a7aa4a4
 Name:      isula_libutils
 Version:   %{_version}
 Release:   %{_release}
@@ -12,9 +12,9 @@ BuildRoot: %{_tmppath}/%{name}-%{version}
 
 BuildRequires: gcc
 BuildRequires: cmake
-BuildRequires: yajl-devel gtest-devel
+BuildRequires: zlib-devel yajl-devel gtest-devel
 
-Requires:      yajl
+Requires:      yajl zlib
 
 %ifarch x86_64 aarch64
 Provides:       lib%{name}.so()(64bit)
@@ -55,7 +55,6 @@ install -m 0644 ./conf/isula_libutils.pc      %{buildroot}/%{_libdir}/pkgconfig/
 install -d $RPM_BUILD_ROOT/%{_includedir}/isula_libutils
 install -m 0644 ../build/json/*.h  %{buildroot}/%{_includedir}/isula_libutils/
 install -m 0644 ../src/json/*.h  %{buildroot}/%{_includedir}/isula_libutils/
-install -m 0644 ../src/json/schema/src/*.h  %{buildroot}/%{_includedir}/isula_libutils/
 install -m 0644 ../third_party/log.h  %{buildroot}/%{_includedir}/isula_libutils/log.h
 
 find %{buildroot} -type f -name '*.la' -exec rm -f {} ';'
