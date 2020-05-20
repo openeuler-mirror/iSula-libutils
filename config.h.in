@@ -1,0 +1,1 @@
+#cmakedefine VERSION "@ISULA_LIBUTILS_VERSION@"

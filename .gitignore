@@ -1,0 +1,33 @@
+# Object files
+*.o
+*.pyc
+
+# Libraries
+*.lib
+*.a
+*.la
+*.so
+*.lo
+**/.libs
+
+# Shared objects
+*.so
+*.so.*
+*.dylib
+
+*~
+*.orig
+
+tags
+build
+config.h
+missing
+**/Makefile
+
+*.tar.gz
+
+**/.deps
+**/.dirstamp
+
+**/__pycache__
+
