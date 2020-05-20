@@ -25,7 +25,7 @@
 # usage
 # ./update-version.bash
 topDir=$(git rev-parse --show-toplevel)
-specfile="${topDir}/isula_libutils.spec"
+specfile="${topDir}/iSula-libutils.spec"
 CMakefile="${topDir}/CMakeLists.txt"
 old_version=$(cat ${specfile} | grep "%global" | grep "_version" | awk  {'print $3'})
 first_old_version=$(cat ${specfile} | grep "%global" | grep "_version" | awk  {'print $3'} | awk -F "." {'print $1'})
@@ -57,7 +57,7 @@ commit_id_long=`git log  --pretty=oneline  -1 | awk {'print $1'}`
 commit_id=${commit_id_long:0:8}
 new_release=`date "+%Y%m%d"`.`date "+%H%M%S"`.git$commit_id
 echo "The relase version  has been modified, it is ${new_release}"
-sed -i "s/set(CLIBCNI_VERSION \"${old_version}\")/set(CLIBCNI_VERSION \"${new_version}\")/g" ${CMakefile}
+sed -i "s/set(ISULA_LIBUTILS_VERSION \"${old_version}\")/set(ISULA_LIBUTILS_VERSION \"${new_version}\")/g" ${CMakefile}
 sed -i "s/^\%global _version ${old_version}$/\%global _version ${new_version}/g" ${specfile}
 sed -i "s/^\%global _release ${old_release}$/\%global _release ${new_release}/g" ${specfile}
 
