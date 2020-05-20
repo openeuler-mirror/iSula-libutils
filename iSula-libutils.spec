@@ -1,12 +1,12 @@
 %global _version 1.0.0
-%global _release 20200519.220857.git3a7aa4a4
-Name:      isula_libutils
+%global _release 20200519.232137.git3c321b3c
+Name:      iSula-libutils
 Version:   %{_version}
 Release:   %{_release}
 Summary:   Provide json parse and log common functions
 Group:     System Environment/Libraries
 License:   LGPLv2.1+
-URL:       iSula_libutils
+URL:       iSula-libutils
 Source0:   %{name}-1.0.tar.gz
 BuildRoot: %{_tmppath}/%{name}-%{version}
 
@@ -17,7 +17,7 @@ BuildRequires: zlib-devel yajl-devel gtest-devel
 Requires:      yajl zlib
 
 %ifarch x86_64 aarch64
-Provides:       lib%{name}.so()(64bit)
+Provides:       libisula_libutils.so()(64bit)
 %endif
 
 %description
@@ -72,7 +72,7 @@ rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root,-)
-%{_libdir}/lib%{name}.so*
+%{_libdir}/libisula_libutils.so*
 
 %files devel
 %defattr(-,root,root,-)
