@@ -76,7 +76,7 @@
                 "portMappings": {
                     "type": "array",
                     "items": {
-                        "$ref": "portmappings.json"
+                        "$ref": "inner_port_mapping.json"
                     }
                 },
                 "bandwidth": {
