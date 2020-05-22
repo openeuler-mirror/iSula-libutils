@@ -74,7 +74,6 @@ install(FILES ${CMAKE_BINARY_DIR}/conf/isula_libutils.pc
 	DESTINATION ${LIB_INSTALL_DIR_DEFAULT}/pkgconfig PERMISSIONS OWNER_READ OWNER_WRITE GROUP_READ GROUP_WRITE)
 
 install(FILES third_party/log.h DESTINATION include/isula_libutils)
-install(FILES third_party/libocispec/read_file.h DESTINATION include/isula_libutils)
 install(FILES src/constants.h DESTINATION include/isula_libutils)
 install(FILES src/utils.h DESTINATION include/isula_libutils)
 install(FILES src/json/oci_runtime_hooks.h DESTINATION include/isula_libutils)
