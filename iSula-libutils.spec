@@ -1,5 +1,5 @@
 %global _version 1.0.0
-%global _release 20200522.172118.git411ea872
+%global _release 20200523.161208.git6790946b
 %global _inner_name isula_libutils
 
 Name:      iSula-libutils
