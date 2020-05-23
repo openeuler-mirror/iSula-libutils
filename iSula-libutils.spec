@@ -1,5 +1,7 @@
 %global _version 1.0.0
 %global _release 20200522.172118.git411ea872
+%global _inner_name isula_libutils
+
 Name:      iSula-libutils
 Version:   %{_version}
 Release:   %{_release}
@@ -50,12 +52,12 @@ install -d $RPM_BUILD_ROOT/%{_libdir}
 install -m 0644 ./src/libisula_libutils.so        %{buildroot}/%{_libdir}/libisula_libutils.so
 
 install -d $RPM_BUILD_ROOT/%{_libdir}/pkgconfig
-install -m 0644 ./conf/isula_libutils.pc      %{buildroot}/%{_libdir}/pkgconfig/isula_libutils.pc
+install -m 0644 ./conf/%{_inner_name}.pc      %{buildroot}/%{_libdir}/pkgconfig/%{_inner_name}.pc
 
-install -d $RPM_BUILD_ROOT/%{_includedir}/isula_libutils
-install -m 0644 ../build/json/*.h  %{buildroot}/%{_includedir}/isula_libutils/
-install -m 0644 ../src/json/*.h  %{buildroot}/%{_includedir}/isula_libutils/
-install -m 0644 ../third_party/log.h  %{buildroot}/%{_includedir}/isula_libutils/log.h
+install -d $RPM_BUILD_ROOT/%{_includedir}/%{_inner_name}
+install -m 0644 ../build/json/*.h  %{buildroot}/%{_includedir}/%{_inner_name}/
+install -m 0644 ../src/json/*.h  %{buildroot}/%{_includedir}/%{_inner_name}/
+install -m 0644 ../third_party/log.h  %{buildroot}/%{_includedir}/%{_inner_name}/log.h
 
 find %{buildroot} -type f -name '*.la' -exec rm -f {} ';'
 find %{buildroot} -name '*.a' -exec rm -f {} ';'
@@ -76,8 +78,9 @@ rm -rf %{buildroot}
 
 %files devel
 %defattr(-,root,root,-)
-%{_includedir}/%{name}/*.h
-%{_libdir}/pkgconfig/%{name}.pc
+%{_includedir}/%{_inner_name}/*.h
+%{_libdir}/pkgconfig/%{_inner_name}.pc
 
 
 %changelog
+
