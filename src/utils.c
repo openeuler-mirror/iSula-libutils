@@ -36,8 +36,8 @@
 #include "constants.h"
 
 #define ISSLASH(C) ((C) == '/')
-#define IS_ABSOLUTE_FILE_NAME(F) (ISSLASH ((F)[0]))
-#define IS_RELATIVE_FILE_NAME(F) (!IS_ABSOLUTE_FILE_NAME (F))
+#define IS_ABSOLUTE_FILE_NAME(F) (ISSLASH((F)[0]))
+#define IS_RELATIVE_FILE_NAME(F) (!IS_ABSOLUTE_FILE_NAME(F))
 
 void *isula_libutils_smart_calloc_s(size_t unit_size, size_t count)
 {
@@ -169,8 +169,7 @@ static bool do_clean_path_continue(const char *endpos, const char *stpos, const 
     return false;
 }
 
-static int do_clean_path(const char *respath, const char *limit_respath,
-                         const char *stpos, char **dst)
+static int do_clean_path(const char *respath, const char *limit_respath, const char *stpos, char **dst)
 {
     char *dest = *dst;
     const char *endpos = NULL;
@@ -210,15 +209,14 @@ static int do_clean_path(const char *respath, const char *limit_respath,
     return 0;
 }
 
-char *cleanpath(const char *path, char *realpath, size_t realpath_len)
+static char *cleanpath(const char *path, char *realpath, size_t realpath_len)
 {
     char *respath = NULL;
     char *dest = NULL;
     const char *stpos = NULL;
     const char *limit_respath = NULL;
 
-    if (path == NULL || path[0] == '\0' || \
-        realpath == NULL || (realpath_len < PATH_MAX)) {
+    if (path == NULL || path[0] == '\0' || realpath == NULL || (realpath_len < PATH_MAX)) {
         return NULL;
     }
 
@@ -323,4 +321,3 @@ int isula_libutils_build_dir(const char *name)
     free(n);
     return 0;
 }
-

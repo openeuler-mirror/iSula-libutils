@@ -34,7 +34,7 @@ oci_runtime_spec_hooks *oci_runtime_spec_hooks_parse_file(const char *filename,
                                                           const struct parser_context *ctx, parser_error *err);
 
 char *oci_runtime_spec_hooks_generate_json(const oci_runtime_spec_hooks *ptr, const struct parser_context *ctx,
-                                                   parser_error *err);
+                                           parser_error *err);
 
 #ifdef __cplusplus
 }
