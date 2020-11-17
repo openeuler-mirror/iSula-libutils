@@ -3,6 +3,10 @@
 #### 介绍
 iSula-libutils为iSula平台提供日志、json解析以及通用的公共方法的工具类的函数库。
 
+本项目停止维护
+为了简化iSula相关项目，把isula-libutils和lcr两个仓库进行合并，因此，后续isula-libutils将停止维护。
+相关代码都已经合入lcr项目中: https://gitee.com/openeuler/lcr
+
 
 #### 安装教程
 
